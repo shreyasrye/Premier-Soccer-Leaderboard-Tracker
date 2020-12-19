@@ -3,7 +3,6 @@ Premier Soccer Leaderboard Tracker
 Our website, created by William Ly, Sheryas Rai, Joseph Ismael, and Alex Kim, focuses on accessibility and the simplicity of making a tracker for intramural soccer leagues. 
 
 Resources Used:
-
   Python
   Django
   Javascript
@@ -35,7 +34,6 @@ Planned Addition to Project:
 
 Before reading further on this section, we plan to add sophisticated details to bring further ease to our user experience. 
 Examples are: 
-
   Possession Statistics
   Custom Fantasy Soccer Feature
   Easier modification of scores
