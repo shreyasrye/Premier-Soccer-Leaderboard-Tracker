@@ -4,12 +4,19 @@ Our website, created by William Ly, Sheryas Rai, Joseph Ismael, and Alex Kim, fo
 
 Resources Used:
   Python
+  
   Django
+  
   Javascript
+  
   Bootstrap
+  
   Git
+  
   VSCode
+  
   Repl
+  
   Discord
 
 Group Interest and Goals:
@@ -34,12 +41,19 @@ Planned Addition to Project:
 
 Before reading further on this section, we plan to add sophisticated details to bring further ease to our user experience. 
 Examples are: 
+
   Possession Statistics
+  
   Custom Fantasy Soccer Feature
+  
   Easier modification of scores
+  
   User roles (Captain, leader, etc)
+  
   Entrance Fee Capabilities
+  
   Custom Sports
+  
   Custom Scoring
 
 
