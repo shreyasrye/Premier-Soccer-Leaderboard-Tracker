@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="select_league.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    .hiddenRow{
+        padding: 0 !important;
+        }
+        pointer {
+        cursor: pointer;
+       }
+    </style>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <div class="modal" tabindex="-1" role="dialog" id="create_team">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create Team</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="" value="">
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="teamName">Team Name:</label>
+                <input name="teamName" class="form-control" placeholder="Team name" id="teamName" type="text" maxlength="100">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="add_match">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add match</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="add_match" value="">
+            <label for="team1">Team #1:</label>
+            <select name="team1" id="team1" class="form-control">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label class="mt-1" for="team1goals">Goals:</label>
+            <input name="team1goals" type="text" class="form-control">
+            <hr>
+            <label for="team2">Team #2:</label>
+            <select name="team2" id="team2" class="form-control">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label class="mt-1" for="team2goals">Goals:</label>
+            <input type="text" class="form-control">
+            </div>
+          <div class="modal-footer">
+            <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-2">
+        <div class="col-md-12">
+          <button class="btn btn-primary" onclick="window.location.reload()">Home</button>
+        </div>
+      </div>
+
+        
+      <div class="row justify-content-center mt-3">
+        <div class="col-6-lg">
+          <h1>(League Name Here)</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-12">
+          <table class="table table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Ranking</th>
+                <th scope="col">Team Name</th>
+                <th scope="col">GP </th>
+                <th scope="col">PTS</th>
+                <th scope="col">W-D-L</th>
+                <th scope="col">GF</th>
+                <th scope="col">GA</th>
+                <th scope="col">GD</th>
+                <th scope="col">Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-toggle="collapse" data-target="#team1" class="pointer">
+                <th scope="row">1</th>
+                <td>Liverpool</td>
+                <td>13</td>
+                <td>28</td>
+                <td>8-4-1</td>
+                <td>29</td>
+                <td>19</td>
+                <td>10</td>
+                <td><strong>ZYQH12</strong></td>
+              </tr>
+              <tr>
+                <td colspan="9" class="hiddenRow">
+                <div class="collapse" id="team1">
+                  <div class="card card-body">
+                    <ul>
+                      <li>Alex Kim</li>
+                      <li>William Ly</li>
+                      <li>Joey</li>
+                      <li>Shreyas</li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+              </tr>
+              <tr data-toggle="collapse" data-target="#team2" class="pointer">
+                <th scope="row">2</th>
+                <td>Other Team</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4-8-1</td>
+                <td>19</td>
+                <td>9</td>
+                <td>23</td>
+                <td><strong>HRKQO2</strong></td>
+              </tr>
+              <tr >
+                <td colspan="9" class="hiddenRow">
+                <div class="collapse" id="team2">
+                  <div class="card card-body">
+                    <ul>
+                      <li>Alex Kim</li>
+                      <li>William Ly</li>
+                      <li>Joey</li>
+                      <li>Shreyas</li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+          
+       </div>
+      </div>       
+      <div class="row justify-content-center mt-3">
+        <div class="col-6-lg">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#create_team">Create Team</button>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#add_match">Add Match</button>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
