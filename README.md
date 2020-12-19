@@ -1,6 +1,6 @@
 Premier Soccer Leaderboard Tracker
 
-Our website, created by William Ly, Sheryas Rai, Joseph Ismael, and Alex Kim, focuses on accessibility and the simplicity of making a tracker for intramural soccer leagues. 
+Our website, created by William Ly, Shreyas Rai, Joseph Ismael, and Alex Kim, focuses on accessibility and the simplicity of making a tracker for intramural soccer leagues. 
 
 Resources Used:
 
