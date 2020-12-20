@@ -1,3 +1,4 @@
+{% load custom_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -96,7 +97,7 @@
         
       <div class="row justify-content-center mt-3">
         <div class="col-6-lg">
-          <h1>(League Name Here)</h1>
+          <h1>{{ league }}</h1>
         </div>
       </div>
       <div class="row justify-content-center mt-3">
@@ -106,7 +107,7 @@
               <tr>
                 <th scope="col">Ranking</th>
                 <th scope="col">Team Name</th>
-                <th scope="col">GP </th>
+                <th scope="col">GP</th>
                 <th scope="col">PTS</th>
                 <th scope="col">W-D-L</th>
                 <th scope="col">GF</th>
@@ -116,20 +117,21 @@
               </tr>
             </thead>
             <tbody>
-              <tr data-toggle="collapse" data-target="#team1" class="pointer">
-                <th scope="row">1</th>
-                <td>Liverpool</td>
-                <td>13</td>
-                <td>28</td>
-                <td>8-4-1</td>
-                <td>29</td>
-                <td>19</td>
-                <td>10</td>
-                <td><strong>ZYQH12</strong></td>
+            {% for team in teams %}
+              <tr data-toggle="collapse" data-target="#team{{ forloop.counter }}" class="pointer">
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ team.name }}</td>
+                <td>{{ team.wins|add:team.losses }}</td>
+                <td>{{ team.wins|add:team.wins|add:team.wins|add:team.draws }}</td>
+                <td>{{ team.wins }}-{{ team.draws}}-{{ team.losses }}</td>
+                <td>{{ team.goals_for }}</td>
+                <td>{{ team.goals_against }}</td>
+                <td>{{ team.goals_for|subtract:team.goals_against }}</td>
+                <td><strong>{{ team.code }}</strong></td>
               </tr>
               <tr>
                 <td colspan="9" class="hiddenRow">
-                <div class="collapse" id="team1">
+                <div class="collapse" id="team{{ forloop.counter }}">
                   <div class="card card-body">
                     <ul>
                       <li>Alex Kim</li>
@@ -141,6 +143,7 @@
                 </div>
               </td>
               </tr>
+            {% endfor %}
               <tr data-toggle="collapse" data-target="#team2" class="pointer">
                 <th scope="row">2</th>
                 <td>Other Team</td>

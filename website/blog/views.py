@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Team, UserTeams, League
 
@@ -43,10 +43,22 @@ def league(request, league_id):
         else:
             # unexpected error
             return HttpResponse("<h1>About</h1>")
+    league = League.objects.get(id=league_id)
+    teams = Team.objects.filter(league=league)
+    users = []
+    for team in teams:
+        members = UserTeams.objects.filter(team=team)
+        users.append(members)
+    context = {"league": league, "teams": teams, "users": users}
+    return render(request, "blog/select_league.html", context)
 
-    return render(request, "blog/select_league.html")
 
-
-def about(request):
-    return HttpResponse("<h1>About</h1>")
+def landing(request):
+    if request.method == "POST":
+        if "league-name" in request.POST:
+            league = League.objects.create(
+                name=request.POST["league-name"], creator=request.user
+            )
+            return redirect("league", league_id=league.id)
+    return render(request, "blog/landing_page.html")
 
