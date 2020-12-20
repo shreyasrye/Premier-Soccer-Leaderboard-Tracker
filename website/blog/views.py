@@ -60,5 +60,11 @@ def landing(request):
                 name=request.POST["league-name"], creator=request.user
             )
             return redirect("league", league_id=league.id)
+        elif "league-code" in request.POST:
+            team = Team.objects.get(code=request.POST["league-code"])
+            UserTeams.objects.create(team=team, user=request.user)
+            return redirect("league", league_id=team.league.id)
+        else:
+            return False
     return render(request, "blog/landing_page.html")
 

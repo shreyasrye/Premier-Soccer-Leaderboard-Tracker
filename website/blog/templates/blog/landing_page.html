@@ -172,7 +172,8 @@
           </div>
           <div class="modal-body">
             <!-- form for league code -->
-            <form>
+            <form method="POST">
+              {% csrf_token %}
               <div class="form-group">
                 <label for="league-code">Enter League Code</label>
                 <input
@@ -183,10 +184,9 @@
                   placeholder="League Code"
                 />
               </div>
-            </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Join</button>
+            <input type="submit" class="btn btn-primary">
             <button
               type="button"
               class="btn btn-secondary"
@@ -194,6 +194,7 @@
             >
               Close
             </button>
+            </form>
           </div>
         </div>
       </div>

@@ -90,7 +90,7 @@
     <div class="container">
       <div class="row mt-2">
         <div class="col-md-12">
-          <button class="btn btn-primary" onclick="window.location.reload()">Home</button>
+          <button class="btn btn-primary" onclick="location.replace('{% url "landing" %}')">Home</button>
         </div>
       </div>
 
@@ -134,41 +134,16 @@
                 <div class="collapse" id="team{{ forloop.counter }}">
                   <div class="card card-body">
                     <ul>
-                      <li>Alex Kim</li>
-                      <li>William Ly</li>
-                      <li>Joey</li>
-                      <li>Shreyas</li>
+                        <li>Alex Kim</li>
+                        <li>William Ly</li>
+                        <li>Joey</li>
+                        <li>Shreyas</li>
                     </ul>
                   </div>
                 </div>
               </td>
               </tr>
             {% endfor %}
-              <tr data-toggle="collapse" data-target="#team2" class="pointer">
-                <th scope="row">2</th>
-                <td>Other Team</td>
-                <td>1</td>
-                <td>2</td>
-                <td>4-8-1</td>
-                <td>19</td>
-                <td>9</td>
-                <td>23</td>
-                <td><strong>HRKQO2</strong></td>
-              </tr>
-              <tr >
-                <td colspan="9" class="hiddenRow">
-                <div class="collapse" id="team2">
-                  <div class="card card-body">
-                    <ul>
-                      <li>Alex Kim</li>
-                      <li>William Ly</li>
-                      <li>Joey</li>
-                      <li>Shreyas</li>
-                    </ul>
-                  </div>
-                </div>
-              </td>
-              </tr>
             </tbody>
           </table>
           
