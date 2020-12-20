@@ -4,21 +4,21 @@ Our website, created by William Ly, Shreyas Rai, Joseph Ismael, and Alex Kim, fo
 
 Resources Used:
 
-  Python
+- Python
   
-  Django
+- Django
   
-  Javascript
+- Javascript
   
-  Bootstrap
+- Bootstrap
   
-  Git
+- Git
   
-  VSCode
+- VSCode
   
-  Repl
+- Repl
   
-  Discord
+- Discord
 
 Group Interest and Goals:
 
