@@ -3,15 +3,13 @@ from django.http import HttpResponse
 from .models import Team, UserTeams, League
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 @login_required
 def league(request, league_id):
     if request.method == "POST":
         if "create_team" in request.POST:
-            # do stuff to create the team
             Team.objects.create(name=team1)
         elif "add_match" in request.POST:
-            # do stuff to update team standings
             team1name = request.POST["team1"]
             team1goals = request.POST["team1goals"]
             team2name = request.POST["team2"]
@@ -42,11 +40,9 @@ def league(request, league_id):
             return True
 
         else:
-            # unexpected error
             return HttpResponse("<h1>About</h1>")
     league = League.objects.get(id=league_id)
     teams = Team.objects.filter(league=league)
-    # teams.order_by("points") # UNTESTED
     teams = sorted(teams, key= lambda t: t.points())
     users = []
     for team in teams:
