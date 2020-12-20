@@ -45,6 +45,7 @@ def league(request, league_id):
             return HttpResponse("<h1>About</h1>")
     league = League.objects.get(id=league_id)
     teams = Team.objects.filter(league=league)
+    student.coursestudent_set.all().order_by(priority()) # UNTESTED
     users = []
     for team in teams:
         members = UserTeams.objects.filter(team=team)
