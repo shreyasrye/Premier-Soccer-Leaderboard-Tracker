@@ -1,4 +1,4 @@
-## Premier Soccer Leaderboard Tracker
+# Premier Soccer Leaderboard Tracker
 
 Group Members' Emails:
 
