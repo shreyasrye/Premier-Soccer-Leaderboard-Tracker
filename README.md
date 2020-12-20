@@ -43,19 +43,19 @@ Our collaboration was mainly through the virtual communication tool Discord and 
 Before reading further on this section, we plan to add sophisticated details to bring further ease to our user experience. 
 Examples are: 
 
-  Possession Statistics
+- Possession Statistics
   
-  Custom Fantasy Soccer Feature
+- Custom Fantasy Soccer Feature
   
-  Easier modification of scores
+- Easier modification of scores
   
-  User roles (Captain, leader, etc)
+- User roles (Captain, leader, etc)
   
-  Entrance Fee Capabilities
+- Entrance Fee Capabilities
   
-  Custom Sports
+- Custom Sports
   
-  Custom Scoring
+- Custom Scoring
 
 
 ### Contributions/Feedbacks:
