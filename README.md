@@ -1,6 +1,6 @@
 ## Premier Soccer Leaderboard Tracker
 
-Group Emails:
+Group Members' Emails:
 
 - wly@umass.edu
 
