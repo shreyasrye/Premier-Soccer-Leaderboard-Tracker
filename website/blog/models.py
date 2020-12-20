@@ -23,9 +23,10 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
-    def priority(nWins: int, nLosses: int, nDraws: int, g_for: int, g_against:int):
-        gd = g_for - g_against
-        return (nWins*3) + draws - (nLosses*3) + (0.25*gd)
+    #UNTESTED
+    def priority(self):
+        gd = self.goals_for - self.goals_against
+        return (self.wins*3) + self.draws - (self.losses*3) + (0.25*gd)
 
 
 class UserTeams(models.Model):
