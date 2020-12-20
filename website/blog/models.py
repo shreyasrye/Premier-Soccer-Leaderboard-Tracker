@@ -24,9 +24,9 @@ class Team(models.Model):
         return self.name
 
     #UNTESTED
-    def priority(self):
-        gd = self.goals_for - self.goals_against
-        return (self.wins*3) + self.draws - (self.losses*3) + (0.25*gd)
+    def points(self):
+        return (self.wins*3) + self.draws
+
 
 
 class UserTeams(models.Model):
