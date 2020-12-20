@@ -21,6 +21,7 @@
     <title>Landing Page</title>
   </head>
   <body>
+  {% if is_admin %}
     <div class="modal" tabindex="-1" role="dialog" id="create_team">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -87,6 +88,7 @@
         </div>
       </div>
     </div>
+  {% endif %}
     <div class="container">
       <div class="row mt-2">
         <div class="col-md-12">
@@ -113,7 +115,7 @@
                 <th scope="col">GF</th>
                 <th scope="col">GA</th>
                 <th scope="col">GD</th>
-                <th scope="col">Code</th>
+                {% if is_admin %}<th scope="col">Code</th>{% endif %}
               </tr>
             </thead>
             <tbody>
@@ -127,7 +129,7 @@
                 <td>{{ team.goals_for }}</td>
                 <td>{{ team.goals_against }}</td>
                 <td>{{ team.goals_for|subtract:team.goals_against }}</td>
-                <td><strong>{{ team.code }}</strong></td>
+                {% if is_admin %}<td><strong>{{ team.code }}</strong></td>{% endif %}
               </tr>
               <tr>
                 <td colspan="9" class="hiddenRow">
@@ -149,12 +151,14 @@
           
        </div>
       </div>       
+      {% if is_admin %}
       <div class="row justify-content-center mt-3">
         <div class="col-6-lg">
           <button class="btn btn-primary" data-toggle="modal" data-target="#create_team">Create Team</button>
           <button class="btn btn-danger" data-toggle="modal" data-target="#add_match">Add Match</button>
         </div>
       </div>
+      {% endif %}
     </div>
 
 

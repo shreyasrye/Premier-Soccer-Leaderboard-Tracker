@@ -10,7 +10,6 @@ def league(request, league_id):
             Team.objects.create(name=team1)
         elif "add_match" in request.POST:
             # do stuff to update team standings
-            leagueName = request.POST["league"]
             team1name = request.POST["team1"]
             team1goals = request.POST["team1goals"]
             team2name = request.POST["team2"]
@@ -49,7 +48,12 @@ def league(request, league_id):
     for team in teams:
         members = UserTeams.objects.filter(team=team)
         users.append(members)
-    context = {"league": league, "teams": teams, "users": users}
+    context = {
+        "league": league,
+        "teams": teams,
+        "users": users,
+        "is_admin": request.user == league.creator,
+    }
     return render(request, "blog/select_league.html", context)
 
 
@@ -66,5 +70,7 @@ def landing(request):
             return redirect("league", league_id=team.league.id)
         else:
             return False
-    return render(request, "blog/landing_page.html")
+    userteams = request.user.userteams_set.all()
+    context = {"userteams": userteams}
+    return render(request, "blog/landing_page.html", context)
 
