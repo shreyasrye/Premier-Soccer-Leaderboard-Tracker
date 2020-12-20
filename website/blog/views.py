@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Team, UserTeams, League
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def league(request, league_id):
     if request.method == "POST":
         if "create_team" in request.POST:
@@ -57,6 +59,7 @@ def league(request, league_id):
     return render(request, "blog/select_league.html", context)
 
 
+@login_required
 def landing(request):
     if request.method == "POST":
         if "league-name" in request.POST:
