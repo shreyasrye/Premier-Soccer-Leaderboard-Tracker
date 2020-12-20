@@ -1,4 +1,14 @@
-## Premier Soccer Leaderboard Tracker
+# Premier Soccer Leaderboard Tracker
+
+Group Members' Emails:
+
+- wly@umass.edu
+
+- youngsukkim@umass.edu
+
+- jismael@umass.edu
+
+- shreyasrai23@gmail.com
 
 Our website, created by William Ly, Shreyas Rai, Joseph Ismael, and Alex Kim, focuses on accessibility and the simplicity of making a tracker for intramural soccer leagues. 
 
