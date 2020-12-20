@@ -23,10 +23,9 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
-    #UNTESTED
     def points(self):
-        return (self.wins*3) + self.draws
-
+        gd = self.goals_for - self.goals_against
+        return (self.wins*3) + self.draws + (0.25*gd)
 
 
 class UserTeams(models.Model):
